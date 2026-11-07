@@ -39,3 +39,10 @@ your data has duplicate values, this is the wrong data structure.
 - `inverse` returns the live internal dict. Treat it as read-only; mutating it
   directly will desynchronise the two indexes.
 - `None` is a legal value, so `b.inverse[None]` works when a key maps to it.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+

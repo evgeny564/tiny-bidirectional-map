@@ -1,6 +1,6 @@
 [project]
 name = "tiny-bidirectional-map"
-version = "0.1.0"
+version = "0.1.1"
 description = "A dict subclass that supports constant-time value-to-key lookups via a maintained reverse index."
 requires-python = ">=3.10"
 dependencies = []
